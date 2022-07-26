@@ -62,7 +62,7 @@ export default function SimpleCard() {
                 _hover={{
                   bg: 'blue.500',
                 }}
-                onSubmit={() => window.Telegram.WebApp.close()}>
+                onClick={() => window.Telegram.WebApp.close()}>
                 Sign in
               </Button>
             </Stack>
