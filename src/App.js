@@ -11,9 +11,16 @@ import {
   Heading,
   Text,
   useColorModeValue,
+  useEditable,
 } from '@chakra-ui/react';
+import { useEffect } from 'react';
 
 export default function SimpleCard() {
+
+  useEffect(() => {
+    window.Telegram.WebApp.ready();
+  })
+
   return (
     <Flex
       minH={'100vh'}
@@ -54,7 +61,8 @@ export default function SimpleCard() {
                 color={'white'}
                 _hover={{
                   bg: 'blue.500',
-                }}>
+                }}
+                onSubmit={() => window.Telegram.WebApp.close()}>
                 Sign in
               </Button>
             </Stack>
